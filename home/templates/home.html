@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+<section class="product a7a">
+        <h2 class="product-film">For You</h2>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <div class="product-container">
+            {% for data in  for_you.results %}
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="qulity">HD</span>
+                    <img src="https://image.tmdb.org/t/p/w200/{{data.poster_path}}" class="f-img">
+                    <a href="/{{data.media_type}}/{{data.id}}"><button class="film-btn">Watch Now</button></a>
+                </div>
+                <div class="film-info">
+                    {% if data.title %}
+                    <h4 class="film-name">{{data.title}}</h4>
+                    {% else %}
+                    <h4 class="film-name">{{data.name}}</h4>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</section>
+
+<section class="product">
+        <h2 class="product-film">movies of the week</h2>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+
+        <div class="product-container">
+            {% for data in  week.results %}
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="qulity">HD</span>
+                    <img src="https://image.tmdb.org/t/p/w200/{{data.poster_path}}" class="f-img">
+                    <a href="/{{data.media_type}}/{{data.id}}"><button class="film-btn">Watch Now</button></a>
+                </div>
+                <div class="film-info">
+                    {% if data.title %}
+                    <h4 class="film-name">{{data.title}}</h4>
+                    {% else %}
+                    <h4 class="film-name">{{data.name}}</h4>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</section>
+
+<section class="product">
+        <h2 class="product-film">popular</h2>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <div class="product-container">
+            {% for data in  popular.results %}
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="qulity">HD</span>
+                    <img src="https://image.tmdb.org/t/p/w200/{{data.poster_path}}" class="f-img">
+                    <a href="/{{data.media_type}}/{{data.id}}"><button class="film-btn">Watch Now</button></a>
+                </div>
+                <div class="film-info">
+                    {% if data.title %}
+                    <h4 class="film-name">{{data.title}}</h4>
+                    {% else %}
+                    <h4 class="film-name">{{data.name}}</h4>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</section>
+
+<section class="product">
+        <h2 class="product-film">now playing</h2>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <div class="product-container">
+            {% for data in  now_playing.results %}
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="qulity">HD</span>
+                    <img src="https://image.tmdb.org/t/p/w200/{{data.poster_path}}" class="f-img">
+                    <a href="/{{data.media_type}}/{{data.id}}"><button class="film-btn">Watch Now</button></a>
+                </div>
+                <div class="film-info">
+                    {% if data.title %}
+                    <h4 class="film-name">{{data.title}}</h4>
+                    {% else %}
+                    <h4 class="film-name">{{data.name}}</h4>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</section>
+    
+    
+
+{% endblock content %}

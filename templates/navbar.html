@@ -1,0 +1,34 @@
+
+<nav class="navbar">
+          <div class="nav">
+              <a href="{% url 'home' %}" class="logo">great <span>films</span></a>
+              <div class="nav-items">
+  
+              <form  action="/search/" method="get" class="search">
+                    <select class="form-select" name="type">
+                      <option value="movie">Movie</option>
+                      <option value="tv">TV Show</option>
+                      </select>
+                      <input type="search" class="search-box" placeholder="Search On Film" name="q">
+                      <button class="search-btn">Search</button>
+              </form>
+  
+              {% if user.is_authenticated %}
+              <span>{{user.username}}</span>
+              <img class="image-profile" src="{{ user.profile.image.url }}" style="width: 25px; height: 25px; ">
+              <a href="{% url 'Profile' %}">Profile</a>
+              <a href="{% url 'Logout' %}">Logout</a>
+              {% else %}
+              <a class="nav-link" href="{% url 'SignUp-SignIn' %}">LogIn</a>
+              {% endif %}
+              </div>
+          </div>
+          <ul class="links-container">
+              <li class="link-item"><a href="#" class="link">Great Movies</a></li>
+              <li class="link-item"><a href="#" class="link">Arabic Movies</a></li>
+              <li class="link-item"><a href="#" class="link">Foreign Movies</a></li>
+              <li class="link-item"><a href="#" class="link">Indian Movies</a></li>
+              <li class="link-item"><a href="#" class="link">Anime</a></li>
+          </ul>
+  
+</nav>

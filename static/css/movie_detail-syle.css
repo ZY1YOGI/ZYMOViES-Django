@@ -1,0 +1,517 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#0c0c0c, #000000);
+    height: 500vh;
+    font-family: system-ui;
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background: #1111118f;
+    z-index: 999;
+}
+
+.nav {
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+span {
+    color: #F9004D;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    width: 500px;
+    display: flex;
+}
+
+.search-box {
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: none;
+    color: #F9004D;
+    outline: none;
+}
+
+.search-btn {
+    width: 20%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #F9004D;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.search-box::placeholder {
+    color: #a9a9a9;
+}
+
+.nav-items a {
+    margin-left: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+    padding: 7px 30px;
+    background-color: #F9004D;
+    border-radius: 20px;
+}
+
+.nav-items a:hover {
+    transform: scale(1.2);
+}
+
+.links-container {
+    width: 100%;
+    display: flex;
+    padding: 10px 10vw;
+    justify-content: center;
+    list-style: none;
+    border-top: 1px solid #191919;
+}
+
+.link {
+    text-transform: capitalize;
+    padding: 0 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 19px;
+}
+
+.link:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.main {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.backgr {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    animation: up-and-down 15s linear infinite;
+}
+
+@keyframes up-and-down {
+    0%,
+    100% {
+        top: 20px;
+    }
+    50% {
+        top: -150px;
+    }
+}
+
+#starss {
+    padding-left: 800px;
+}
+
+.main .filmimg {
+    width: 330px;
+    height: 380px;
+    z-index: 1;
+}
+
+.main .name-film {
+    font-size: 60px;
+    color: #F9004D;
+    text-align: center;
+    padding-top: 100px;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main .icon-info {
+    display: flex;
+    border: 2px solid #f7f7f7;
+    width: 70%;
+    margin: auto;
+    height: 430px;
+}
+
+.main .table {
+    width: 60%;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+    text-align: left;
+    height: 430px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+table tr {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+table th {
+    font-size: 25px;
+}
+
+table td {
+    font-size: 18px;
+    text-align: center;
+}
+
+.w-or-d {
+    display: block;
+    color: #F9004D;
+    text-decoration: none;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 8px 37px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 1px;
+    border: 2px solid #F9004D;
+    margin-top: -2px;
+    transition: 0.8s;
+}
+
+.btn-a7a {
+    overflow: hidden;
+    z-index: 800;
+}
+
+.w-or-d:hover {
+    color: #Fff;
+    background-color: #F9004D;
+    border: 2px solid #ffffff;
+}
+
+.p-table {
+    font-size: 12px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/*---  acros ----*/
+
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    width: 80%;
+    margin: auto;
+}
+
+.product-film {
+    padding: 10px 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    text-transform: capitalize;
+    color: #F9004D;
+}
+
+.product-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+    display: flex;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    /*height: 350px;*/
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.f-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.qulity {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #F9004D;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+
+.film-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-image:hover .film-btn {
+    opacity: 1;
+}
+
+.film-btn:hover {
+    background-color: #F9004D;
+    transition: 1s;
+    color: #fff;
+}
+
+.film-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    color: #Fff;
+}
+
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn {
+    right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.5;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
+
+.product-image h5 {
+    color: rgb(255, 255, 255);
+    padding-top: 5px;
+}
+
+
+/*---telair---*/
+
+#telar {
+    width: 50%;
+    height: 450px;
+    margin: auto;
+}
+
+#telar iframe {
+    width: 100%;
+    height: 85%;
+}
+
+#telar h2 {
+    color: #F9004D;
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 4%;
+}
+
+
+/***---   more films--*/
+
+.product2 {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: transparent;
+    padding-top: 80px;
+}
+
+.product-film2 {
+    padding: 10px 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    text-transform: capitalize;
+    color: #F9004D;
+}
+
+.product-container2 {
+    padding: 0 10vw;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.product-container2::-webkit-scrollbar {
+    display: flex;
+}
+
+.product-card2 {
+    flex: 0 0 auto;
+    width: 250px;
+    /*height: 350px;*/
+}
+
+.product-image2 {
+    position: relative;
+    width: 80%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.f-img2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qulity {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #F9004D;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+
+.film-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-image:hover .film-btn {
+    opacity: 1;
+}
+
+.film-btn:hover {
+    background-color: #F9004D;
+    transition: 1s;
+    color: #fff;
+}
+
+.film-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+    color: #Fff;
+}
+
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn {
+    right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}

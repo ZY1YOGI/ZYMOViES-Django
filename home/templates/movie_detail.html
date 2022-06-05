@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% block style %}
+        <link rel="stylesheet" href="{% static 'css/movie_detail-syle.css' %}">
+{% endblock style %}
+{% block content %}
+
+
+
+    <section class="main">
+        <img src="{% static 'img/bg-movies.webp' %}" id="stars" class="backgr">
+        <div class="film-info">
+            <h1 class="name-film">{{ data.title }}</h1>
+            <div class="icon-info">
+                <div class="btn-a7a">
+                    <img src="https://image.tmdb.org/t/p/original{{ data.poster_path }}" class="filmimg">
+                    <a href="#telar" class="w-or-d">watch or donlwod</a>
+                </div>
+
+
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Name :</th>
+                            <td>{{ data.title }}</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <th>language:</th>
+                            <td>{{ data.original_language }}</td>
+                        </tr>
+                        <tr>
+                            <th>Genres :</th>
+                                </h6>
+                                    <td>{% for g in data.genres %}
+                                    ( {{ g.name }} )
+                                    {% endfor %}</td>
+                                <h6>
+                        </tr>
+                        <tr>
+                            <th>Release date :</th>
+                            <td>{{ data.release_date }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>Runtime :</th>
+                            <td>{{ data.runtime }} minutes</td>
+                        </tr>
+                        <tr>
+                            <th>vote average :</th>
+                            <td>{{ data.vote_average }}</td>
+                        </tr>
+                        <tr>
+                            <th>Overview :</th>
+                            <td class="p-table">{{ data.overview }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="product">
+
+        <h2 class="product-film">Actors</h2>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+
+        <div class="product-container">
+            {% for actor in actors.cast %}
+                <div class="product-card">
+                    <div class="product-image">
+                        {% if  actor.profile_path %}
+                            <img src="https://image.tmdb.org/t/p/w200/{{ actor.profile_path }}" class="f-img">
+                        {% else %}
+                            <img src="{% static 'img/user.jpg' %}" alt="..." class="f-img" >
+                        {% endif %}
+                        
+                        <h5 class="hh">{{actor.name}}</h5>
+                        <h5 class="hh">{{actor.character}}</h5>
+                    </div>
+
+                </div>
+            
+            {% endfor %}
+        </div>
+
+
+
+    </section>
+    <section id="telar">
+        <h2>trailer</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{Trailer.key}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+
+
+    <section class="product product2">
+        <h2 class="product-film">Comedy Movies</h2>
+        <button class="pre-btn"><img src="{% static 'img/arrow.png' %}"></button>
+        <button class="nxt-btn"><img src="{% static 'img/arrow.png' %}"></button>
+            
+        <div class="product-container product-container2">
+            {% for m in recommendations.results %}
+            <div class="product-card product-card2">
+                <div class="product-image product-image2">
+                    <span class="qulity">HD</span>
+                    <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" class="card-img-top" alt="...">
+                    </button><a href="/{{ type }}/{{ m.id }}"><button class="film-btn">Watch Now</button></a>
+                </div>
+                <div class="film-info">
+                    {% if not m.name %}
+                    <h2 class="film-name">{{ m.title }}</h2>
+                    {% else %}
+                    <h2 class="film-name">{{ m.name }}</h2>
+                    {% endif %}
+                    
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- scrpt 1 -->
+
+
+    <script>
+        let stars = document.getElementById('stars');
+        let starss = document.getElementById('starss');
+
+
+        window.onscroll = function() {
+            let value = scrollY;
+            stars.style.left = value + 'px';
+
+            starss.style.left = value + 'px';
+        }
+    </script>
+    <script>
+        let stars = document.getElementById('stars');
+
+        window.onscroll = function() {
+            let value = scrollY;
+            stars.style.left = value + 'px';
+
+        }
+    </script>
+
+
+    <!-- script 2 -->
+
+    <script>
+        const productContainers = [...document.querySelectorAll('.product-container')];
+        const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+        const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+        productContainers.forEach((item, i) => {
+            let containerDimernstions = item.getBoundingClientRect();
+            let containerWidth = containerDimernstions.width;
+
+            nxtBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            })
+
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            })
+        })
+    </script>
+{% endblock content %}
