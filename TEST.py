@@ -1,16 +1,16 @@
-# from tmdbv3api import TMDb, Search
+from tmdbv3api import TMDb, Search
 
-# tmdb = TMDb()
+tmdb = TMDb()
 
-# tmdb.api_key = "b3b2cba3f60060d27295ae00e67c7f6e"
+tmdb.api_key = "b3b2cba3f60060d27295ae00e67c7f6e"
 
-# search = Search()
+search = Search()
 
-# results = search.movies({"query": "Matrix", "year": 1999})
+results = search.movies({"query": "Matrix", "year": 1999})
 
-# for result in results:
-#     print(result.title)
-#     print(result.overview)
+for result in results:
+    print(result.title)
+    print(result.overview)
 
 
 import requests
